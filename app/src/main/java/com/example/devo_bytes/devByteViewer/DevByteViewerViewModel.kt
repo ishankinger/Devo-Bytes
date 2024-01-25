@@ -42,7 +42,7 @@ class DevByteViewerViewModel: ViewModel() {
                 _status.value = DevByteViewerApiStatus.LOADING
                 val listResult = getPlaylistDeferred.await()
                 if(listResult.videos.isNotEmpty()){
-                    _devByteVideos.value = listResult.videos.asDomainModel()
+                    _devByteVideos.value = listResult.asDomainModel()
                 }
                 _status.value = DevByteViewerApiStatus.DONE
             }

@@ -15,8 +15,8 @@ data class NetworkVideo(
 @JsonClass(generateAdapter = true)
 data class NetworkObject(val videos: List<NetworkVideo>)
 
-fun List<NetworkVideo>.asDomainModel(): List<Video> {
-    return map {
+fun NetworkObject.asDomainModel(): List<Video> {
+    return videos.map {
         Video(
             url = it.url,
             title = it.title,
@@ -27,8 +27,8 @@ fun List<NetworkVideo>.asDomainModel(): List<Video> {
 }
 
 // Convert network results into database object
-fun List<NetworkVideo>.asDatabaseModel(): Array<DatabaseVideo> {
-    return map {
+fun NetworkObject.asDatabaseModel(): Array<DatabaseVideo> {
+    return videos.map {
         DatabaseVideo(
             title = it.title,
             description = it.description,

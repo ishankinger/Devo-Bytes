@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.devo_bytes.TitleFragment"
+        android:label="TitleFragment" >
+        <action
+            android:id="@+id/action_titleFragment_to_devByteViewerFragment"
+            app:destination="@id/devByteViewerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/devByteViewerFragment"
+        android:name="com.example.devo_bytes.devByteViewer.DevByteViewerFragment"
+        android:label="DevByteViewerFragment" >
+<!--        <action-->
+<!--            android:id="@+id/action_devByteFragment_to_detailVideoFragment"-->
+<!--            app:destination="@id/detailVideoFragment" />-->
+    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/detailVideoFragment"-->
+<!--        android:name="com.example.devo_bytes.detail.DetailVideoFragment"-->
+<!--        android:label="DetailVideoFragment" >-->
+<!--    </fragment>-->
+</navigation>

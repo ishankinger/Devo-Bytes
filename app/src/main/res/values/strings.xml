@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Devo_Bytes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="let_s_start">Let\'s Start</string>
+    <string name="dev_byte_viewers">Dev Byte Viewers</string>
+    <string name="hi_this_is_dev_byte_videos_frgament">Hi, this is dev byte videos frgament</string>
+</resources>

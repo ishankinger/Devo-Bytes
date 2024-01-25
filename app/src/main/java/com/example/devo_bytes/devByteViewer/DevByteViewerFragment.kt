@@ -30,7 +30,9 @@ class DevByteViewerFragment : Fragment() {
         val binding : FragmentDevByteViewerBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_dev_byte_viewer,container,false)
 
-        viewModel = ViewModelProviders.of(this)[DevByteViewerViewModel::class.java]
+        val viewModelFactory = activity?.let { DevByteViewerViewModelFactory(it.application) }
+
+        viewModel = ViewModelProviders.of(this,viewModelFactory)[DevByteViewerViewModel::class.java]
 
         binding.devByteViewModel = viewModel
 

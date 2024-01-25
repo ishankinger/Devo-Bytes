@@ -17,7 +17,7 @@ class VideosRepository(private val database : VideosDatabase) {
         it.asDomainModel()
     }
 
-    suspend fun refreshVideo(){
+    suspend fun refreshVideos(){
         withContext(Dispatchers.IO) {
             val playlist = DevByteViewersApi.retrofitService.getPlaylistAsync().await()
             database.videoDao.insertAll(*playlist.asDatabaseModel())
